@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+
+import { DatasharingService} from '../datasharing.service'
 
 @Component({
   selector: 'app-progress-bar',
@@ -6,11 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./progress-bar.component.css']
 })
 export class ProgressBarComponent implements OnInit {
-  @Input() loading: boolean;
+ loading: boolean = false;
 
-  constructor() { }
+  constructor(private dataService: DatasharingService, private cdf: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this.dataService.getLoadingStream().subscribe(data => {
+      console.log("Received loading")
+      this.loading = data;
+      this.cdf.detectChanges();
+    });
   }
 
 }

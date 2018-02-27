@@ -40,7 +40,8 @@ export class NavbarComponent implements OnInit,AfterViewInit {
     this.google = new google.maps.places.Autocomplete(this.searchBox.nativeElement,{types: ['(cities)']})
     this.google.addListener('place_changed',() => {
       let place = this.google.getPlace();
-      this.loading = true;
+
+      this.dataService.broadcastLoading(true);
 
       this.service.searchByLocation({lat: place.geometry.location.lat(), lng: place.geometry.location.lng()})
         .subscribe(data => {
@@ -60,11 +61,11 @@ export class NavbarComponent implements OnInit,AfterViewInit {
 
             console.log(this.srss);
             this.cdf.detectChanges();
-            this.loading = false;
+            this.dataService.broadcastLoading(false);
             this.dataService.broadcastSrss(this.srss);
         }, err => {
-            this.loading = false;
             console.log(err);
+            this.dataService.broadcastLoading(false);
         })
     })
   }

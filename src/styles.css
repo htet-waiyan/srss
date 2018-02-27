@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import './bulma.css';
+
+.app-loading .loading-bar
+{
+    display: block;
+    -webkit-animation: shift-rightwards 1s ease-in-out infinite;
+    -moz-animation: shift-rightwards 1s ease-in-out infinite;
+    -ms-animation: shift-rightwards 1s ease-in-out infinite;
+    -o-animation: shift-rightwards 1s ease-in-out infinite;
+    animation: shift-rightwards 1s ease-in-out infinite;
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    -o-animation-delay: .4s;
+    animation-delay: .4s;
+}

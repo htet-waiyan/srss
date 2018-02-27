@@ -1,0 +1,22 @@
+<div class="container">
+    <div *ngIf="srss">
+      <app-title [locationName] = "srss.countryName"></app-title>
+      <app-riseset [srss] = "srss"></app-riseset>
+    </div>
+
+    <div *ngIf = "!srss">
+        <section class="hero">
+          <div class="hero-body">
+            <div class="container">
+              <h2 class="title">
+                Some destination deserves to spend some time to watch beautiful sun rise and sun set
+              </h2>
+              <h3 class="subtitle">
+                Knowing when to view will help you planning your sightseeing.
+                Find a good spot. Sit back and enjoy!
+              </h3>
+            </div>
+          </div>
+        </section>
+    </div>
+</div>

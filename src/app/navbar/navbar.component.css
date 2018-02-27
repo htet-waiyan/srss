@@ -1,0 +1,17 @@
+.srss-search-box{
+  width: 400px;
+}
+
+.navbar{
+  margin-top:10px;
+}
+
+.navbar-item .logo{
+  font-family: 'Shrikhand', cursive;
+  font-size: 24px;
+  color:#ff7600;
+}
+
+.navbar-item .logo:hover{
+  color:#ff4700;
+}
